@@ -3,8 +3,10 @@ with transformer (or multilayer perceptron)
 
 ## Overview
 ### Background
+molecular modeling (1.geom 2.orbital) -> energy calculation -> DFT -> DM21
 ### Problem
 ### Approach
+一些复杂的公式快速过
 #### Code demo
 [link to ipynb]
 #### Architecture (formal pseudocode)
