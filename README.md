@@ -3,11 +3,13 @@ with transformer (or multilayer perceptron)
 
 ## Overview
 ### Background
+molecular modeling (1.geom 2.orbital) -> energy calculation -> DFT -> DM21
 ### Problem
 Pathological errors from approximations in existing functionals need to be addressed for the **accuarcy**.
 
 One of the root of such error is the violation of exact conditions for systems with fractional electrons [see John Predew for more insight]
 ### Approach
+
 Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
 
