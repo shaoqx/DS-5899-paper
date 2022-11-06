@@ -4,7 +4,7 @@ with transformer (or multilayer perceptron)
 ## Overview
 ### Background
 ### Problem
-enhance efficiency and accuarcy. (design a new functional.)
+enhance accuarcy. (design a new functional.)
 ### Approach
 train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
