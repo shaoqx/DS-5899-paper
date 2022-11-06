@@ -10,7 +10,8 @@ One of the root of such error is the violation of exact conditions for systems w
 ### Approach
 Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
-#### Code demo
+
+#### Code demo (done)
 [Colab notebook](https://colab.research.google.com/drive/1wl7wB1vNYKgYIdsWwKryCs-DX1lZWURv?usp=sharing)
 
 #### dataset
@@ -18,7 +19,7 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 
 #### Architecture (formal pseudocode)
 
-### Significance
+### Significance (done)
 In general, outpreforms popular hand-made functionals in all datasets.
 
 ![](resource/benchmark_result.png)
@@ -27,13 +28,14 @@ Especially,
 - in bond breaking benchmark (BBB), accuratly described systems with fractional charge (FC) and fractional spin (FS).
 - in mindless benchmark subset (MB16-43), accuratly described systems with out-of-distribution exotic geometries. (randomly generated)
 
-In cases where DFTs are expected to be bad,
+In cases where traditional DFTs are expected to be bad,
 - correctly described bond breaking for charged and closed-shell neutral molecules
   ![](resource/bond_diss.png)
 - correctly described charge delocalization in the DNA base pair
-  
+  ![](resource/DNA_pair.png)
 - magnetic properties of a compressed hydrogen chain
 - reaction barrier heights for a ring-opening intermediate with diradical character
+  ![](resource/H-chain_and_barrier.png)
 
 ## Analysis
 ### Overlooked
@@ -59,7 +61,7 @@ Inconsistant performance shown by a recent study [6].
 ### Q1
 ### Q2
 
-## Resource
+## Resource (done)
 
 [1] DM21 repo https://github.com/deepmind/deepmind-research/tree/master/density_functional_approximation_dm21
 
