@@ -10,6 +10,7 @@ Pathological errors from approximations in existing functionals need to be addre
 One of the root of such error is the violation of exact conditions for systems with fractional electrons [see John Predew for more insight]
 ### Approach
 
+Some DFT details with fast pace
 Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
 
