@@ -12,7 +12,7 @@ only the $E_{ex}$ term is learned
 fixed densities of reactant and product (by B3LYP) -> reaction energy (by experiment or CCSD(T)/CBS) 
 
 #### Code demo
-[link to ipynb]
+[Colab notebook](https://colab.research.google.com/drive/1wl7wB1vNYKgYIdsWwKryCs-DX1lZWURv?usp=sharing)
 #### Architecture (formal pseudocode)
 
 ### Significance
@@ -31,10 +31,16 @@ non-main group element
 doubt
 - leaking of the training set in test set of BBB
 - generalization part all have problems
+
 response
 - do leaking but have other part not leaking proving the fact
 -  no examples that it is really bad at generalization.
+
 Inconsistant performance shown by a recent study [6].
+- The trend of DM21 changes several times with the increase of the atomic number
+
+![](resource/inconsistent.png)
+
 ## Questions
 ### Q1
 ### Q2
