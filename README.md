@@ -4,22 +4,36 @@ with transformer (or multilayer perceptron)
 ## Overview
 ### Background
 ### Problem
-enhance accuarcy. (design a new functional.)
+Pathological errors from approximations in existing functionals need to be addressed for the **accuarcy**.
+
+One of the root of such error is the violation of exact conditions for systems with fractional electrons [see John Predew for more insight]
 ### Approach
-train a new functional that obeys two classes of mathematical constraints with fractional electrons.
+Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
+#### Code demo
+[Colab notebook](https://colab.research.google.com/drive/1wl7wB1vNYKgYIdsWwKryCs-DX1lZWURv?usp=sharing)
+
 #### dataset
 fixed densities of reactant and product (by B3LYP) -> reaction energy (by experiment or CCSD(T)/CBS) 
 
-#### Code demo
-[Colab notebook](https://colab.research.google.com/drive/1wl7wB1vNYKgYIdsWwKryCs-DX1lZWURv?usp=sharing)
 #### Architecture (formal pseudocode)
 
 ### Significance
-correctly described bond breaking for charged and closed-shell neutral molecules
-charge delocalization in a DNA base pair
-magnetic properties of a compressed hydrogen chain
-reaction barrier heights for a ring-opening intermediate with diradical character
+In general, outpreforms popular hand-made functionals in all datasets.
+
+![](resource/benchmark_result.png)
+
+Especially, 
+- in bond breaking benchmark (BBB), accuratly described systems with fractional charge (FC) and fractional spin (FS).
+- in mindless benchmark subset (MB16-43), accuratly described systems with out-of-distribution exotic geometries. (randomly generated)
+
+In cases where DFTs are expected to be bad,
+- correctly described bond breaking for charged and closed-shell neutral molecules
+  ![](resource/bond_diss.png)
+- correctly described charge delocalization in the DNA base pair
+  
+- magnetic properties of a compressed hydrogen chain
+- reaction barrier heights for a ring-opening intermediate with diradical character
 
 ## Analysis
 ### Overlooked
@@ -45,7 +59,8 @@ Inconsistant performance shown by a recent study [6].
 ### Q1
 ### Q2
 
-## Resource (need 5 other than the paper)
+## Resource
+
 [1] DM21 repo https://github.com/deepmind/deepmind-research/tree/master/density_functional_approximation_dm21
 
 [2] Comment on the paper from John P. Predew https://www.science.org/doi/10.1126/science.abm2445
