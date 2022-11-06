@@ -41,10 +41,15 @@ Inconsistant performance shown by a recent study [6].
 
 ## Resource (need 5 other than the paper)
 [1] DM21 repo https://github.com/deepmind/deepmind-research/tree/master/density_functional_approximation_dm21
+
 [2] Comment on the paper from John P. Predew https://www.science.org/doi/10.1126/science.abm2445
+
 [3] The doubt from Gerasimov et al. https://www.science.org/doi/10.1126/science.abq3385
+
 [4] The author's reponse of the doubt https://www.science.org/doi/10.1126/science.abq4282
+
 [5] The deepmind blog about this paper https://www.deepmind.com/blog/simulating-matter-on-the-quantum-scale-with-ai
+
 [6] A study shows the inconsistancy of DM21 on one-electron systems https://arxiv.org/pdf/2208.06482.pdf
 
 ## Video
