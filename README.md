@@ -1,5 +1,6 @@
 # Pushing the frontiers of density functionals by solving the fractional electron problem
 with transformer (or multilayer perceptron)
+> https://www.science.org/doi/10.1126/science.abj6511
 
 ## Overview
 ### Background
