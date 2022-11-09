@@ -104,6 +104,7 @@ E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  
 
 12 $E_{xc}^{DM21} = E_{xc}^{MLP} + E_{D3(BJ)}$
 ***
+![](resource/model.png)
 ### Significance
 - Provide a new paradigm for DFT design.
 - In general, outpreforms popular hand-made functionals in all datasets.
