@@ -14,7 +14,7 @@ DFT is already successful but have limitation: violation of mathematical propert
 
 ### Problem
 Eliminate some limitation in accuracy of DFT calculation:
-- Solve pathological errors from violation of exact conditions for systems with fractional electrons in existing functionals to enhance the **accuracy**.
+- Solve pathological errors from violation of exact conditions for systems with fractional electrons in existing functionals to enhance the **accuarcy**.
 - from 0 to 1 in some application system.
 
 ### Approach
@@ -74,8 +74,13 @@ Inconsistant performance shown by a recent study [6].
 ## Questions
 ### Q1
 Why dont they directly learn from structure - energy data?
+<details>
+<summary>Click to expand</summary>
 
-$\color{white}{People \ have \ had \ many \ tries \ on \ it \ and \ the \ ability \ to \ generalize \ the \ model \ is \ the \ core \ problem.}$
+People have had many tries on it and the ability to generilize the model is the core problem.
+
+</details>
+
 ### Q2
 
 ## Resource (done)
