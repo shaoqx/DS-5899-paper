@@ -73,11 +73,17 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 
 **Output:** $E \in \mathbb {R}$, the electronic energy of the givin fixed density
 
-**Hyperparameters:** 
+**Hyperparameters:** $d_{mlp}, L_{mlp}, \eta$
 
-**Parameters:** $W_{mlp} \in \mathbb {R^d}$
+**Parameters:** $\theta$ include all following parameters:
 
-1 for $n_r$ in $\mathbf {n}$:
+ &emsp; $W_0, b_0, W_{-1}, b_{-1}$
+
+ &emsp; For $l \in [L_{mlp}]$:
+
+ &emsp; | &emsp; $W_{mlp}^l \in \mathbb {R^{d \times d}}, b_{mlp} \in \mathbb {R^d}, \gamma_l,\beta_l$
+
+1 for $n_r$ in $\mathbf {n}$:  &emsp;  &emsp;  &emsp;  &emsp;  &emsp;(sharing weights)
 
 2 &emsp; $\mathbf x_r \leftarrow HFfeature(r, \mathbf {n}, \uparrow)$ &emsp; $[\mathbf x_r \in \mathbb {R^{11}}]$
 
