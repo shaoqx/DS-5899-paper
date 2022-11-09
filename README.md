@@ -68,6 +68,7 @@ Eliminate some limitation in accuracy of DFT calculation:
 fixed densities of reactant and product (by B3LYP) -> reaction energy (by experiment or CCSD(T)/CBS) 
 
 #### Architecture (formal pseudocode)
+***
 **Input:** $\mathbf {n} \in \mathbb {R}$, spatial grid representation of a fixed electronic density of a molecule (it will not do SCF in training)
 
 **Output:** $E \in \mathbb {R}$, the electronic energy of the givin fixed density
@@ -96,10 +97,11 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 
 10 &emsp;$f_{\theta,r} = 0.5 (f_{\theta,r,\downarrow} + f_{\theta,r,\uparrow})$
 
-12 $E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e_x^{HF}(r)  \\\\  e_x^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r$
+12 ```math
+E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e_x^{HF}(r)  \\\\  e_x^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r```
 
 10 $E_{xc}^{DM21} = E_{xc}^{MLP} + E_{D3(BJ)}$
-
+***
 ### Significance
 - Provide a new paradigm for DFT design.
 - In general, outpreforms popular hand-made functionals in all datasets.
