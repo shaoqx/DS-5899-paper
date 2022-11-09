@@ -89,13 +89,13 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 
 6 &emsp; &emsp; $\mathbf {a_r} \leftarrow ELU(W_{mlp}^l\mathbf {a} + b_{mlp}^l)$
 
-7 &emsp; &emsp; $\mathbf {a_r} \leftarrow layer\_norm(\mathbf {a}|\gamma_l,\beta_l)$
+7 &emsp; &emsp; $\mathbf {a_r} \leftarrow layer\\_norm(\mathbf {a}|\gamma_l,\beta_l)$
 
 8 &emsp; $\mathbf f_{\theta,r,\uparrow} \leftarrow sigmoid(W_{-1}\mathbf x_r^\prime + b_{-1})$ &emsp; $[f_{\theta,r,\uparrow} \in \mathbb {(0,2)^{3}}]$
 
 9 &emsp; Run same for $\downarrow$ and get a set of $f_{\theta,r,\downarrow} \in \mathbb {(0,2)^{3}}$
 
-10 &emsp;$f_{\theta,r} = 0.5 (f_{\theta,r,\downarrow} + f_{\theta,r,\uparrow})$
+10 &emsp; $f_{\theta,r} = 0.5 (f_{\theta,r,\downarrow} + f_{\theta,r,\uparrow})$
 
 11
 ```math
