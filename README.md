@@ -21,37 +21,37 @@ Eliminate some limitation in accuracy of DFT calculation:
 
 <details>
 <summary>DFT 101</summary>
-Time-indenpendent Schrödinger Equation (TISE)
+- Time-indenpendent Schrödinger Equation (TISE)
 
-${\hat {H}}\Psi = E\Psi$ this gives energy
+  ${\hat {H}}\Psi = E\Psi$ this gives energy
 
-TISE for molecule
+- TISE for molecule
 
-${\hat {H}}\Psi =\left[{\hat {T}}+{\hat {V}}+{\hat {U}}\right]\Psi =\left[\sum _{i=1}^{N}\left(-{\frac {\hbar ^{2}}{2m_{i}}}\nabla _{i}^{2}\right)+\sum _{i=1}^{N}V(\mathbf {r} _{i})+\sum _{i<j}^{N}U\left(\mathbf {r} _{i},\mathbf {r} _{j}\right)\right]\Psi =E\Psi$
+  ${\hat {H}}\Psi =\left[{\hat {T}}+{\hat {V}}+{\hat {U}}\right]\Psi =\left[\sum _{i=1}^{N}\left(-{\frac {\hbar ^{2}}{2m_{i}}}\nabla _{i}^{2}\right)+\sum _{i=1}^{N}V(\mathbf {r} _{i})+\sum _{i<j}^{N}U\left(\mathbf {r} _{i},\mathbf {r} _{j}\right)\right]\Psi =E\Psi$
 
-limition in solving the many-body problem limits its solution.
+  limition in solving the many-body problem limits its solution.
 
-Hohenberg–Kohn theorems
+- Hohenberg–Kohn theorems
 
-- electronic density can give wavefunction
+  - electronic density can give wavefunction
 
-  $\Psi _{0}=\Psi [n_{0}]$
+    $\Psi _{0}=\Psi [n_{0}]$
 
-  $O[n_{0}]={\big \langle }\Psi [n_{0}]{\big |}{\hat {O}}{\big |}\Psi [n_{0}]{\big \rangle }$
-- defines an energy functional for the system and proves that the ground-state electron density minimizes this energy functional
+    $O[n_{0}]={\big \langle }\Psi [n_{0}]{\big |}{\hat {O}}{\big |}\Psi [n_{0}]{\big \rangle }$
+  - defines an energy functional for the system and proves that the ground-state electron density minimizes this energy functional
 
-  $E[\rho ]=T_{s}[\rho ]+\int d\mathbf {r} \,v_{\text{ext}}(\mathbf {r} )\rho (\mathbf {r} )+E_{\text{H}}[\rho ]+E_{\text{xc}}[\rho ]$
+    $E[\rho ]=T_{s}[\rho ]+\int d\mathbf {r} \,v_{\text{ext}}(\mathbf {r} )\rho (\mathbf {r} )+E_{\text{H}}[\rho ]+E_{\text{xc}}[\rho ]$
 
-Self-consistent field
+- Self-consistent field
 
-$\left[-\frac{\hbar^2}{2m}\nabla^2+V_s(\vec r)\right] \phi_i(\vec r) =  \epsilon_i \phi(\vec r)$
+  $\left[-\frac{\hbar^2}{2m}\nabla^2+V_s(\vec r)\right] \phi_i(\vec r) =  \epsilon_i \phi(\vec r)$
 
-$n(\vec r )\equiv n_s(\vec r)=\sum_i^N \left|\phi_i(\vec r)\right|^2$
+  $n(\vec r )\equiv n_s(\vec r)=\sum_i^N \left|\phi_i(\vec r)\right|^2$
 
-$V_s = V +\int \frac{e^2n_s(\vec r\,')}{|\vec r-\vec r\,'|} {\rm d}^3r'+ V_{\rm XC}[n_s(\vec r)]$
+  $V_s = V +\int \frac{e^2n_s(\vec r\,')}{|\vec r-\vec r\,'|} {\rm d}^3r'+ V_{\rm XC}[n_s(\vec r)]$
 
-1. inital guess of $n(\vec r)$
-2. calculate $\!V_s$ from DFT functional
+  1. inital guess of $n(\vec r)$
+  2. calculate $\!V_s$ from DFT functional
 
 
 </details>
