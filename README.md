@@ -105,6 +105,7 @@ E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  
 12 $E_{xc}^{DM21} = E_{xc}^{MLP} + E_{D3(BJ)}$
 ***
 ![](resource/model.png)
+
 ### Significance
 - Provide a new paradigm for DFT design.
 - In general, outpreforms popular hand-made functionals in all datasets.
@@ -126,10 +127,10 @@ E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  
 
 ## Analysis
 ### Overlooked
-speed (near dlpno-CCSD(T))
+The super slow speed hinders it from widely usage. (near dlpno-CCSD(T))
 ### Further development
-speed
-non-main group element
+Improve the speed of feature calculation and convergence.
+Data for non-main group element.
 ### Disputed part
 doubt
 - leaking of the training set in test set of BBB
@@ -155,6 +156,15 @@ People have had many tries on it and the ability to generilize the model is the 
 </details>
 
 ### Q2
+
+Why do they run the same netword twice and average the result?
+
+<details>
+<summary>Answer</summary>
+
+To build spin symmetry.
+
+</details>
 
 
 ## Resource (done)
