@@ -96,9 +96,10 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 9 &emsp; Run same for $\downarrow$ and get a set of $f_{\theta,r,\downarrow} \in \mathbb {(0,2)^{3}}$
 
 10 &emsp;$f_{\theta,r} = 0.5 (f_{\theta,r,\downarrow} + f_{\theta,r,\uparrow})$
-
-12 ```math
-E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e_x^{HF}(r)  \\\\  e_x^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r```
+ 
+```math
+E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e_x^{HF}(r)  \\\\  e_x^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r
+```
 
 10 $E_{xc}^{DM21} = E_{xc}^{MLP} + E_{D3(BJ)}$
 ***
