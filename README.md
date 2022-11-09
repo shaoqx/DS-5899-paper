@@ -19,7 +19,45 @@ Eliminate some limitation in accuracy of DFT calculation:
 
 ### Approach
 
-Some DFT details with fast pace: Schrödinger eq -> many body problem -> H-K principle 1 2 -> K-S equation -> SCF -> functional -> Eex
+<details>
+<summary>DFT 101</summary>
+Time-indenpendent Schrödinger Equation (TISE)
+
+${\hat {H}}\Psi = E\Psi$ this gives energy
+
+TISE for molecule
+
+${\hat {H}}\Psi =\left[{\hat {T}}+{\hat {V}}+{\hat {U}}\right]\Psi =\left[\sum _{i=1}^{N}\left(-{\frac {\hbar ^{2}}{2m_{i}}}\nabla _{i}^{2}\right)+\sum _{i=1}^{N}V(\mathbf {r} _{i})+\sum _{i<j}^{N}U\left(\mathbf {r} _{i},\mathbf {r} _{j}\right)\right]\Psi =E\Psi$
+
+limition in solving the many-body problem limits its solution.
+
+Hohenberg–Kohn theorems
+
+- electronic density can give wavefunction
+
+  $\Psi _{0}=\Psi [n_{0}]$
+
+  $O[n_{0}]={\big \langle }\Psi [n_{0}]{\big |}{\hat {O}}{\big |}\Psi [n_{0}]{\big \rangle }$
+- defines an energy functional for the system and proves that the ground-state electron density minimizes this energy functional
+
+  $E[\rho ]=T_{s}[\rho ]+\int d\mathbf {r} \,v_{\text{ext}}(\mathbf {r} )\rho (\mathbf {r} )+E_{\text{H}}[\rho ]+E_{\text{xc}}[\rho ]$
+
+Self-consistent field
+
+$\left[-\frac{\hbar^2}{2m}\nabla^2+V_s(\vec r)\right] \phi_i(\vec r) =  \epsilon_i \phi(\vec r)$
+
+$n(\vec r )\equiv n_s(\vec r)=\sum_i^N \left|\phi_i(\vec r)\right|^2$
+
+$V_s = V +\int \frac{e^2n_s(\vec r\,')}{|\vec r-\vec r\,'|} {\rm d}^3r'+ V_{\rm XC}[n_s(\vec r)]$
+
+1. inital guess of $n(\vec r)$
+2. calculate $\!V_s$ from DFT functional
+
+
+</details>
+
+
+ -> many body problem -> H-K principle 1 2 -> K-S equation -> SCF -> functional -> Eex
 Why dont directly training the geom and the energy? (because it is not one to one correlated, the same geometry could have different electronic structure)
 Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
@@ -75,13 +113,14 @@ Inconsistant performance shown by a recent study [6].
 ### Q1
 Why dont they directly learn from structure - energy data?
 <details>
-<summary>Click to expand</summary>
+<summary>Answer</summary>
 
 People have had many tries on it and the ability to generilize the model is the core problem.
 
 </details>
 
 ### Q2
+
 
 ## Resource (done)
 
@@ -96,5 +135,7 @@ People have had many tries on it and the ability to generilize the model is the 
 [5] The deepmind blog about this paper https://www.deepmind.com/blog/simulating-matter-on-the-quantum-scale-with-ai
 
 [6] A study shows the inconsistancy of DM21 on one-electron systems https://arxiv.org/pdf/2208.06482.pdf
+
+[7] Intro to DFT theory https://www.youtube.com/watch?v=Ez_Fm4iTUeo
 
 ## Video
