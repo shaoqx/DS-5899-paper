@@ -52,26 +52,55 @@ Eliminate some limitation in accuracy of DFT calculation:
   $V_s = V +\int \frac{e^2n_s(\vec r\,')}{|\vec r-\vec r\,'|} {\rm d}^3r'+ V_{\rm XC}[n_s(\vec r)]$
 
   1. inital guess of $n(\vec r)$
-  2. calculate $\!V_s$ from DFT functional
-
+  2. calculate $\V_s$ from DFT functional
+  3. calculate $\phi_i(\vec r)$ or that $n(\vec r)$ from K-S equation
+  4. do this until converge
 
 </details>
 
+- Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
+- Only the exchange-correlation term $E_{ex}$ was learned and interfaced to a standard Kohn-Sham DFT code (PySCF).
 
- -> many body problem -> H-K principle 1 2 -> K-S equation -> SCF -> functional -> Eex
-Why dont directly training the geom and the energy? (because it is not one to one correlated, the same geometry could have different electronic structure)
-Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
-only the $E_{ex}$ term is learned
-
-#### Code demo (done)
+#### Code demo
 [Colab notebook](https://colab.research.google.com/drive/1wl7wB1vNYKgYIdsWwKryCs-DX1lZWURv?usp=sharing)
 
 #### dataset
 fixed densities of reactant and product (by B3LYP) -> reaction energy (by experiment or CCSD(T)/CBS) 
 
 #### Architecture (formal pseudocode)
+**Input:** $\mathbf {n} \in \mathbb {R}$, spatial grid representation of a fixed electronic density of a molecule (it will not do SCF in training)
 
-### Significance (done)
+**Output:** $E \in \mathbb {R}$, the electronic energy of the givin fixed density
+
+**Hyperparameters:** 
+
+**Parameters:** $W_{mlp} \in \mathbb {R^d}$
+
+1 for $n_r$ in $\mathbf {n}$:
+
+2 &emsp; $\mathbf x_r \leftarrow HFfeature(r, \mathbf {n}, \uparrow)$ &emsp; $[\mathbf x_r \in \mathbb {R^{11}}]$
+
+3 &emsp; $\mathbf x_r^\prime \leftarrow log(|\mathbf x_r| + \eta)$, element-wise squash
+
+4 &emsp; $\mathbf a \leftarrow tanh(W_0\mathbf x_r^\prime + b_0)$ &emsp; $[\mathbf a \in \mathbb {R^{256}}]$, activation
+
+5 &emsp; for $l = 1,2,...,L$ do
+
+6 &emsp; &emsp; $\mathbf {a_r} \leftarrow ELU(W_{mlp}^l\mathbf {a} + b_{mlp}^l)$
+
+7 &emsp; &emsp; $\mathbf {a_r} \leftarrow layer\_norm(\mathbf {a}|\gamma_l,\beta_l)$
+
+8 &emsp; $\mathbf f_{\theta,r,\uparrow} \leftarrow sigmoid(W_{-1}\mathbf x_r^\prime + b_{-1})$ &emsp; $[f_{\theta,r,\uparrow} \in \mathbb {(0,2)^{3}}]$
+
+9 &emsp; Run same for $\downarrow$ and get a set of $f_{\theta,r,\downarrow} \in \mathbb {(0,2)^{3}}$
+
+10 &emsp;$f_{\theta,r} = 0.5 (f_{\theta,r,\downarrow} + f_{\theta,r,\uparrow})$
+
+12 $E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e_x^{HF}(r)  \\\\  e_x^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r$
+
+10 $E_{xc}^{DM21} = E_{xc}^{MLP} + E_{D3(BJ)}$
+
+### Significance
 - Provide a new paradigm for DFT design.
 - In general, outpreforms popular hand-made functionals in all datasets.
 
