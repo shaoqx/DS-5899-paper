@@ -4,9 +4,14 @@ with transformer (or multilayer perceptron)
 
 ## Overview
 ### Background
-molecular modeling (1.geom 2.orbital) -> energy calculation -> DFT -> DM21
+Molecular modeling is a promising with to understand and design everything made out of molecules.
+What does a molecular model looks like? atomic geometry & electronic structure
+How to model a molecular? Energy calculation -> solving Schrödinger equation -> one of the method: DFT
+DFT is already successful but have limitation.
 ### Problem
-Pathological errors from approximations in existing functionals need to be addressed for the **accuarcy**.
+Eliminate some limitation in accuracy of DFT calculation:
+- Pathological errors from approximations in existing functionals need to be addressed for the **accuarcy**.
+- from 0 to 1 in some application system.
 
 One of the root of such error is the violation of exact conditions for systems with fractional electrons [see John Predew for more insight]
 ### Approach
@@ -25,22 +30,23 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 #### Architecture (formal pseudocode)
 
 ### Significance (done)
-In general, outpreforms popular hand-made functionals in all datasets.
+- Provide a new paradigm for DFT design.
+- In general, outpreforms popular hand-made functionals in all datasets.
 
-![](resource/benchmark_result.png)
+  ![](resource/benchmark_result.png)
 
-Especially, 
-- in bond breaking benchmark (BBB), accuratly described systems with fractional charge (FC) and fractional spin (FS).
-- in mindless benchmark subset (MB16-43), accuratly described systems with out-of-distribution exotic geometries. (randomly generated)
+  Especially, 
+  - in bond breaking benchmark (BBB), accuratly described systems with fractional charge (FC) and fractional spin (FS).
+  - in mindless benchmark subset (MB16-43), accuratly described systems with out-of-distribution exotic geometries. (randomly generated)
 
-In cases where traditional DFTs are expected to be bad,
-- correctly described bond breaking for charged and closed-shell neutral molecules
-  ![](resource/bond_diss.png)
-- correctly described charge delocalization in the DNA base pair
-  ![](resource/DNA_pair.png)
-- magnetic properties of a compressed hydrogen chain
-- reaction barrier heights for a ring-opening intermediate with diradical character
-  ![](resource/H-chain_and_barrier.png)
+  In cases where traditional DFTs are expected to be bad,
+  - correctly described bond breaking for charged and closed-shell neutral molecules
+    ![](resource/bond_diss.png)
+  - correctly described charge delocalization in the DNA base pair
+    ![](resource/DNA_pair.png)
+  - magnetic properties of a compressed hydrogen chain
+  - reaction barrier heights for a ring-opening intermediate with diradical character
+    ![](resource/H-chain_and_barrier.png)
 
 ## Analysis
 ### Overlooked
