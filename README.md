@@ -5,18 +5,21 @@ with transformer (or multilayer perceptron)
 ## Overview
 ### Background
 Molecular modeling is a promising with to understand and design everything made out of molecules.
+
 What does a molecular model looks like? atomic geometry & electronic structure
-How to model a molecular? Energy calculation -> solving Schrödinger equation -> one of the method: DFT
-DFT is already successful but have limitation.
+
+How to model a molecular? Energy calculation -> one of the method: DFT
+
+DFT is already successful but have limitation: violation of mathematical properties in all popular approximations -> limited performance in special systems.
+
 ### Problem
 Eliminate some limitation in accuracy of DFT calculation:
-- Pathological errors from approximations in existing functionals need to be addressed for the **accuarcy**.
+- Solve pathological errors from violation of exact conditions for systems with fractional electrons in existing functionals to enhance the **accuarcy**.
 - from 0 to 1 in some application system.
 
-One of the root of such error is the violation of exact conditions for systems with fractional electrons [see John Predew for more insight]
 ### Approach
 
-Some DFT details with fast pace: schordinger eq -> many body problem -> H-K principle 1 2 -> K-S equation -> SCF -> functional -> Eex
+Some DFT details with fast pace: Schrödinger eq -> many body problem -> H-K principle 1 2 -> K-S equation -> SCF -> functional -> Eex
 Why dont directly training the geom and the energy? (because it is not one to one correlated, the same geometry could have different electronic structure)
 Train a new functional that obeys two classes of mathematical constraints with fractional electrons.
 only the $E_{ex}$ term is learned
@@ -70,6 +73,9 @@ Inconsistant performance shown by a recent study [6].
 
 ## Questions
 ### Q1
+Why dont they directly learn from structure - energy data?
+
+<font color=white size=3>People have had many tries on it and the ability to generilize the model is the core problem.</font>
 ### Q2
 
 ## Resource (done)
