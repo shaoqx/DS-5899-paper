@@ -36,7 +36,7 @@ Eliminate some limitation in accuracy of DFT calculation:
 
   - electronic density can give wavefunction
 
-    $\Psi _{0}=\Psi [n_{0}]$
+    $\Psi_{0}=\Psi [n_{0}]$
 
     $O[n_{0}]={\big \langle }\Psi [n_{0}]{\big |}{\hat {O}}{\big |}\Psi [n_{0}]{\big \rangle }$
   - defines an energy functional for the system and proves that the ground-state electron density minimizes this energy functional
