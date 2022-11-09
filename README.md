@@ -28,7 +28,7 @@ Eliminate some limitation in accuracy of DFT calculation:
 
 - TISE for molecule
 
-  ${\hat {H}}\Psi =\left[{\hat {T}}+{\hat {V}}+{\hat {U}}\right]\Psi =\left[\sum_{i=1}^{N}\left(-{\frac {\hbar ^{2}}{2m_{i}}}\nabla _{i}^{2}\right)+\sum_{i=1}^{N}V(\mathbf {r}_{i})+\sum_{i<j}^{N}U\left(\mathbf {r}_{i},\mathbf {r}_{j}\right)\right]\Psi =E\Psi$
+  ${\hat {H}}\Psi =\left[{\hat {T}}+{\hat {V}}+{\hat {U}}\right]\Psi = \left[\sum_{i=1}^{N}\left(-{\frac {\hbar^{2}}{2m_{i}}}\nabla_{i}^{2}\right) + \sum_{i=1}^{N} V(\mathbf {r_i})+ \sum_{i \lt j}^{N}U\left(\mathbf {r_i},\mathbf {r_j}\right) \right]\Psi =E\Psi$
 
   limition in solving the many-body problem limits its solution.
 
