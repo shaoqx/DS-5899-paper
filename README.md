@@ -105,7 +105,7 @@ fixed densities of reactant and product (by B3LYP) -> reaction energy (by experi
 
 11
 ```math
-E_{xc}^{MLP} = \int \mathbf f_{\theta}(r)* \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e^{HF}(r)  \\\\  e^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r
+E_{xc}^{MLP} = \int \mathbf f_{\theta}(r) · \begin{bmatrix}  e_x^{LDA}(r)  \\\\  e^{HF}(r)  \\\\  e^{\omega HF}(r)  \\\\ \end{bmatrix} \mathrm{d}^3r
 ```
 
 12 $E_{xc}^{DM21} = E_{xc}^{MLP} + E_{D3(BJ)}$
