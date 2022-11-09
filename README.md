@@ -21,6 +21,7 @@ Eliminate some limitation in accuracy of DFT calculation:
 
 <details>
 <summary>DFT 101</summary>
+
 - Time-indenpendent Schrödinger Equation (TISE)
 
   ${\hat {H}}\Psi = E\Psi$ this gives energy
