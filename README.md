@@ -184,3 +184,4 @@ To build spin symmetry.
 [7] Intro to DFT theory https://www.youtube.com/watch?v=Ez_Fm4iTUeo
 
 ## Video
+https://vanderbilt365-my.sharepoint.com/:v:/g/personal/qianzhen_shao_vanderbilt_edu/EdyCn7swYzRLrUV08n6ed-MBVpHSRQalo0GCWDy-y28c6g?e=Q1Vgsx
